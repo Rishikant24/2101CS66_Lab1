@@ -56,6 +56,13 @@ int main()
                 break;
             }
         }
+
+        case 5:     // Modulo Operation
+        {
+            ans = fmod(a,b);
+            printf("Remainder when %f is divided by %f = %f", a, b, ans);
+            break;
+        }
     
     }
 
