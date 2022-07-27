@@ -4,6 +4,7 @@
 void swap(int *x, int *y);
 void insertion_sort(int a[], int s);
 void selection_sort(int a[], int s);
+void bubble_sort(int a[], int s);
 
 int main()
 {
@@ -38,6 +39,12 @@ int main()
          case 2: 
         {
             selection_sort(a, n);
+            break;
+        }
+
+        case 3: 
+        {
+            bubble_sort(a, n);
             break;
         }
     }
@@ -94,6 +101,28 @@ void selection_sort(int a[], int n)
             int *x = &a[i];
             int *y = &a[imin];
             swap(x,y);
+        }
+    }
+
+    for(i=0;i<n;i++)
+    {
+        printf("%d ", a[i]);
+    }
+}
+
+void bubble_sort(int a[], int n)
+{
+    int i,j;
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-1;j++)
+        {
+            if(a[j]>a[j+1])
+            {   
+                int *x = &a[j];
+                int *y = &a[j+1];
+                swap(x,y);
+            }
         }
     }
 
