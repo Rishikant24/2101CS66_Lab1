@@ -27,6 +27,13 @@ int main()
             printf("%f + %f = %f", a, b, ans);
             break;
         }
+
+        case 2:     // Subtraction Operation
+        {
+            ans = a-b;
+            printf("%f - %f = %f", a, b, ans);
+            break;
+        }
     
     }
 
