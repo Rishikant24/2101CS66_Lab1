@@ -19,4 +19,15 @@ int main()
     printf("Enter 5 for Modulus Function\n");
     scanf("%d", &n);
 
+    switch(n)
+    {
+        case 1:     // Addition Operation
+        {
+            ans = a+b;
+            printf("%f + %f = %f", a, b, ans);
+            break;
+        }
+    
+    }
+
 }
