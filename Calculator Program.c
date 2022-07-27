@@ -63,6 +63,12 @@ int main()
             printf("Remainder when %f is divided by %f = %f", a, b, ans);
             break;
         }
+
+        default:
+        {
+            printf("WARNING!: Enter the correct option between 1-5");
+            break;
+        }
     
     }
 
