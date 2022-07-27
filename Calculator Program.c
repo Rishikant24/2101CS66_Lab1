@@ -41,6 +41,21 @@ int main()
             printf("%f x %f = %f", a, b, ans);
             break;
         }
+
+        case 4:     // Division Operation
+        {   
+            if(b!=0)
+            {
+                ans = a/b;
+                printf("%f/%f = %f", a, b, ans);
+                break;
+            }
+            else
+            {
+                printf("Divison by 0 is undefined");
+                break;
+            }
+        }
     
     }
 
