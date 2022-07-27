@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-
+void swap(int *x, int *y);
+void insertion_sort(int a[], int s);
 
 int main()
 {
@@ -22,5 +23,48 @@ int main()
     printf("Enter 3 for 'BUBBLE SORT'\n");
     printf("Enter 4 for 'MERGE SORT'\n");
     printf("Enter 5 for 'QUICK SORT'\n");
+
+    scanf("%d", &q);
+
+    switch(q)
+    {
+        case 1: 
+        {
+            insertion_sort(a, n);
+            break;
+        }
+
+    }
+
     
+    
+}
+
+void swap(int *x, int *y)
+{
+    int temp;
+    temp=*y;
+    *y=*x;
+    *x=temp;
+}
+
+void insertion_sort(int a[], int n)
+{
+    int i,j;
+    for(i=1;i<n;i++)
+    {
+        j=i;
+        while(j>0 && a[j]<a[j-1])
+        {   
+            int *x = &a[j];
+            int *y = &a[j-1];
+            swap(x,y);
+            j--;
+        }
+    }
+
+    for(i=0;i<n;i++)
+    {
+        printf("%d ", a[i]);
+    }
 }
