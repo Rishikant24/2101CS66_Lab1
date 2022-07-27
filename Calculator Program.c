@@ -34,6 +34,13 @@ int main()
             printf("%f - %f = %f", a, b, ans);
             break;
         }
+
+        case 3:     // Multiplication Operation
+        {
+            ans = a*b;
+            printf("%f x %f = %f", a, b, ans);
+            break;
+        }
     
     }
 
