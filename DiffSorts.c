@@ -8,6 +8,8 @@ void bubble_sort(int a[], int s);
 void printArray(int A[], int size);
 void merge(int a[], int l, int m, int r);
 void merge_sort(int a[], int l, int s);
+int partition (int arr[], int low, int high);
+void quick_sort(int arr[], int low, int high);
 
 int main()
 {
@@ -54,6 +56,13 @@ int main()
         case 4: 
         {
             merge_sort(a, 0, n-1);
+            printArray(a, n);
+            break;
+        }
+
+        case 5: 
+        {
+            quick_sort(a,0,n-1);
             printArray(a, n);
             break;
         }
@@ -207,3 +216,37 @@ void merge_sort(int arr[], int l, int r) // function that uses recursion to impl
         merge(arr, l, m, r);
     }
 }
+
+int partition (int arr[], int low, int high)  // partition function for quick sort 
+{ 
+    int pivot = arr[high]; // pivot 
+    int i = (low - 1); // Index of smaller element and indicates the right position of pivot found so far
+  
+    for (int j = low; j <= high - 1; j++) 
+    { 
+        // If current element is smaller than the pivot 
+        if (arr[j] < pivot) 
+        { 
+            i++; // increment index of smaller element 
+            swap(&arr[i], &arr[j]); 
+        } 
+    } 
+    swap(&arr[i + 1], &arr[high]); 
+    return (i + 1); 
+} 
+
+
+void quick_sort(int arr[], int low, int high) // function which implements quick sort 
+{ 
+    if (low < high) 
+    { 
+        /* pi is partitioning index, arr[p] is now 
+        at right place */
+        int pi = partition(arr, low, high); 
+  
+        // Separately sort elements before 
+        // partition and after partition 
+        quick_sort(arr, low, pi - 1); 
+        quick_sort(arr, pi + 1, high); 
+    } 
+} 
