@@ -66,6 +66,12 @@ int main()
             printArray(a, n);
             break;
         }
+
+         default:
+        {   
+            printf("WARNING!: Enter the correct option between 1-5");
+            break;
+        }
     }
 
     
